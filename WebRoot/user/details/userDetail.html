@@ -1,0 +1,71 @@
+#@top()
+<link rel="stylesheet" type="text/css" href="#(contextPath)/css/shopping-mall-index.css"/>
+<div class="personal w1200">
+    <div class="personal w1200">
+        <div class="personal-left f-l">
+            <div class="personal-l-tit">
+                <h3>个人中心</h3>
+            </div>
+            <ul>
+                <li class="per-li2"><a href="/user/details/updateDetail/#(session.user.uid ??)">个人资料<span>></span></a></li>
+                <li class="per-li3"><a href="/user/details/queryMyOrder/#(session.user.uid ??)">我的订单<span>></span></a></li>
+                <li class="per-li6"><a href="/user/details/queryAddress/#(session.user.uid ??)">管理收货地址<span>></span></a></li>
+                <li class="per-li8"><a href="/user/details/queryRecords/#(session.user.uid ??)">购买记录<span>></span></a></li>
+            </ul>
+        </div>
+        <div class="personal-r f-r">
+            <div class="personal-right">
+                <div class="personal-r-tit">
+                    <h3>个人资料</h3>
+                </div>
+                <script type="text/javascript">
+                    $("#save").click(function () {
+                        #("#updateForm").submit();
+                    });
+                    var sex=$("#sex").val();
+                    if(sex != null){
+                        $("#sex").attr("disabled","disabled");
+                    }else{
+                        $("#sex").attr("disabled",false);
+                    }
+                </script>
+                <form action="/user/details/updateDetail/#(session.user.uid ??)" method="post" id="updateForm">
+                <div class="data-con">
+                    <div class="dt1">
+                        <p class="dt-p f-l">昵称：</p>
+                        <input type="text" placeholder="请输入您的昵称"  value="#(session.user.nickname ??)" name="user.nickname"/>
+                        <div style="clear:both;"></div>
+                    </div>
+                    <div class="dt1">
+                        <p class="dt-p f-l">用户名：</p>
+                        <input type="text" value="#(session.user.realname ??)" name="user.realname" />
+                        <div style="clear:both;"></div>
+                    </div>
+                    <div class="dt1">
+                        <p class="dt-p f-l">年龄：</p>
+                        <input type="text" value="#(session.user.age ??)" name="user.age"/>
+                        <div style="clear:both;"></div>
+                    </div>
+                    <div class="dt1 dt3">
+                        <p class="dt-p f-l">手机号：</p>
+                        <input type="text" value="#(session.user.phone ??)" name="user.phone" />
+                    </div>
+                    <div class="dt1">
+                        <p class="dt-p f-l">邮箱：</p>
+                        <input type="text" value="#(session.user.email ??)" name="user.email" />
+                        <div style="clear:both;"></div>
+                    </div>
+                    <button class="btn-pst" id="save">保存</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+                </div>
+            </div>
+        </div>
+        <div style="clear:both;"></div>
+    </div>
+    #@end()
+</div>

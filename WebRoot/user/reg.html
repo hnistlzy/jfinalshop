@@ -1,0 +1,160 @@
+
+<html class="hb-loaded">
+<head>
+    <meta charset="utf-8">
+
+    <title>会员注册</title>
+        <meta name="Keywords" content="Darry Ring钻戒价格,Darry Ring钻戒图片">
+    <meta name="Description" content="Darry Ring官网会员注册登录唯一入口，Darry Ring是求婚钻戒第一品牌，想了解Darry Ring实体店、Darry Ring哪里有卖等相关Darry Ring资讯就先进入戴瑞珠宝官网注册吧！">
+
+    <link href="#(contextPath)/css/style1.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="#(contextPath)/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="#(contextPath)/js/reg.js"></script>
+
+</head>
+
+<body>
+<div class="wrap">
+        <!-- start of 头部导航-->
+    <div class="head_top">
+        <div class="head clearfix">
+            <!--头部左边-->
+            <div class="topLeft left">
+                <a href="index.jsp" title="Darry Ring">
+                    <img width="186" height="42" src="#(contextPath)/images/logo_01.png ">
+                </a>
+                <span>求婚钻戒领导品牌</span>
+            </div>
+            <!--头部左边end-->
+            <!--头部右边-->
+            <ul class="topRight right">
+                <li>国际权威认证</li>
+                <li class="tr_2">15天无理由退换</li>
+                <li class="tr_3">终身保养</li>
+            </ul>
+            <!--头部左边end-->
+        </div>
+    </div>
+    <!--end of 头部导航-->
+    <!-- starto of container -->
+    <div class="container">
+        <!--中间内容-->
+        <div class="cmain ddd">
+            <!--内容右边-->
+            <div class="cort-right right">
+                <div class="r_bg"></div>
+                <!--登陆框内-->
+                <div class="cr_border">
+                    <div class="tits">
+                        <span class="focus ph"><em></em>手机注册</span>
+                        <span class=" em"><em></em>邮箱注册</span>
+                    </div>
+                    <!--手机注册-->
+
+                    <form method="post" action="#(contextPath)/user/regByPhone" class="form_first" id="form_first">
+                    <div style="" class="photo_show">
+                        <!--手机-->
+                        <div class="the_input">
+                           <span class="member"></span>
+                           <input type="text" placeholder="请输入手机号码" class="al_Input dr_photo"  name="user.phone" id="phone" value="#(user.phone ??)">
+                        </div>
+                        <div class="ts_wrong"><span class="errorClass" id="phoneError"></span></div>
+                        <!--手机end-->
+                        <!--密码-->
+                        <div style="border:none" class="the_input">
+                            <span class="password"></span>
+                            <input type="text" style="width:133px;" placeholder="请输入验证码" class="al_Input ls"  name="verifyCode" id="phone_code">
+                            <input type="button" value="获取验证码" class="action" id="phoneCode">
+                        </div>
+                        <div class="ts_wrong"><span class="errorClass" id="phone_codeError">#(phoneCodeError ??)</span></div>
+                                                
+                        <!--验证码end-->
+                        <!--密码-->
+                        <div class="the_input ">
+                           <span class="pw"></span>
+                           <input type="password" placeholder="请输入密码" maxlength="21" class="al_Input dr_photo" name="user.password" id="phone_pwd" value="#(user.password ??)">
+                        </div>
+                        <div class="ts_wrong"><span class="errorClass" id="phone_pwdError"></span></div>
+                        <!--密码end-->
+                        <!--密码-->
+                        <div class="the_input ">
+                           <span class="pw"></span>
+                           <input type="password" placeholder="确认密码" maxlength="21" class="al_Input dr_photo"  name="phone_pwd_confirm" id="phone_pwd_confirm">
+                        </div>
+                        <div class="ts_wrong"><span class="errorClass" id="phone_pwd_confirmError"></span></div>
+                        <!--密码end-->
+
+                        <div class="other_input">
+                        <div class="left">
+                            <input type="checkbox" name="mobile_check" id="check">
+                            <label for="check">已经仔细阅读并同意<a target="_blank" href="index.html/help_se/49.html">《Darry Ring用户注册协议》</a></label>
+                        </div>
+                        </div>
+                        <!--其他合作-->
+                        <div class="other_hz">
+                            <input type="submit" value="立即注册" id="mobile_reg" class="up">
+                        </div>
+                        <!--其他合作end-->
+                    </div>
+                    </form>
+                    <!--手机注册end-->
+
+                    <!--邮箱注册-->
+                    <form method="post" action="/user/regByEmail" id="form_second">
+
+                    <div style="display:none" class="photo_show">
+                        <!--邮箱-->
+                        <div class="the_input ">
+                           <span class="member"></span>
+                           <input type="text" placeholder="请输入邮箱" class="al_Input dr_photo"  name="user.email" id="email">
+                        </div>
+                        <div class="ts_wrong"><span class="errorClass" id="emailError">#(mailError)</span></div>
+                        <!--邮箱end-->
+                        
+                        <!--密码-->
+                        <div class="the_input ">
+                           <span class="pw"></span>
+                           <input type="password" placeholder="请输入密码" maxlength="21" class="al_Input dr_photo"  name="user.password" id="password">
+                        </div>
+                        <div class="ts_wrong"><span class="errorClass" id="passwordError"></span></div>
+
+                        <!--密码end-->
+                        <!--密码-->
+                        <div class="the_input ">
+                           <span class="pw"></span>
+                           <input type="password" placeholder="确认密码" maxlength="21" class="al_Input dr_photo"  name="email_pwd_confirm" id="repwd">
+                        </div>
+                        <div class="ts_wrong"><span class="errorClass" id="repwdError" ></span></div>
+                        <!--密码end-->
+
+                        <!--验证-->
+
+                        
+                        <!--其他合作-->
+                        <div class="other_hz">
+                            <input type="submit" value="立即注册" id="email_reg" class="up"/>
+
+                        </div>
+                        <!--其他合作end-->
+                    </div>
+                    </form>
+                         <div><span style="font-size: 12px; display: inline-block;padding-top: 10px;float:left;margin-left: 176px; ">已经有账号，</span><span style="color: #8e4f1b; font-size: 12px; display: inline-block; float: right; margin-right: 42px; padding-top: 10px;"><a href="./jsps/login.jsp">立即登录</a></span></div>
+                    <!--邮箱注册end-->
+                </div>
+                <!--登陆框内end-->
+            </div>
+            <!--内容右边end-->
+        </div>
+        <!--中间内容end-->
+    </div>
+    <!-- end of container -->
+
+        <!--底部end-->
+    <div class="cmain bc_yz">
+        <div class="db_cort">
+            <p>Copyright &copy; 2006-2015 www.darryring.com 戴瑞珠宝 All Rights Reserved. 粤ICP备11012085号</p>
+            <p>中国互联网违法信息举报中心 | 中国公安网络110报警服务 | 本网站提供所售商品的正式发票</p>
+        </div>
+    </div>
+
+</div></body></html>

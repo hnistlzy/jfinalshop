@@ -1,0 +1,17 @@
+#define personal_left()
+
+<link rel="stylesheet" type="text/css" href="#(contextPath)/css/shopping-mall-index.css"/>
+<div class="personal-left f-l">
+    <div class="personal-l-tit">
+        <h3>个人中心</h3>
+    </div>
+    <ul>
+        <li class="per-li2"><a href="/user/details/updateDetail/#(session.user.uid ??)">个人资料<span>></span></a></li>
+        <li class="per-li3"><a href="/user/details/queryMyOrder/#(session.user.uid ??)">我的订单<span>></span></a></li>
+        <li class="per-li6"><a href="/user/details/queryAddress/#(session.user.uid ??)">管理收货地址<span>></span></a></li>
+        <li class="per-li8"><a href="/user/details/queryRecords/#(session.user.uid ??)">购买记录<span>></span></a></li>
+    </ul>
+</div>
+
+
+#end

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:clear="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>管理收货地址</title>
+</head>
+<body>
+#@top()
+<div class="personal w1200">
+    #@personal_left()
+    <div class="management f-r">
+        <div class="tanchuang-con">
+            <div class="tc-title">
+                <h3>我的收货地址，#(href)</h3>
+            </div>
+            <script type="text/javascript">
+                $("#button").click(function () {
+                    $("#form").submit();
+                })
+            </script>
+            <font class="xinxi">请认真填写以下信息！</font>
+            <ul class="tc-con2">
+                <li class="tc-li1">
+                    <form action="#(path)/#(session.user.uid ??)-#(addr.addrId ??)" method="post" id="form">
+                    <p class="l-p">所在地区<span>*</span></p>
+                    <div class="xl-dz">
+                        <input type="text" name="userAddress.province" placeholder="请填写省份" value="#(addr.province ??)"/>
+                        <input type="text" name="userAddress.city" placeholder="请填写城市" value="#(addr.city ??)"/>
+                        <div style="clear:both;"></div>
+                    </div>
+                    <div style="clear:both;"></div>
+
+                <li class="tc-li1">
+                    <p class="l-p">详细地址<span>*</span></p>
+                    <textarea class="textarea1" placeholder="请如实填写您的详细信息，如街道名称、门牌号、楼层号和房间号。" name="userAddress.detailAddr">#(addr.detailAddr ??)</textarea>
+                    <div style="clear:both;"></div>
+                </li>
+                <li class="tc-li1">
+                    <p class="l-p">收货人姓名<span>*</span></p>
+                    <input type="text" value="#(addr.consignee ??)"  name="userAddress.consignee" />
+                    <div style="clear:both;"></div>
+                </li>
+                <li class="tc-li1">
+                    <p class="l-p">联系电话<span>*</span></p>
+                    <input type="text"  value="#(addr.consigneePhone ??)" name="userAddress.consigneePhone"/>
+                    <div style="clear:both;"></div>
+                </li>
+            </ul>
+            <button class="btn-pst2" id="button">保存</button>
+            </form>
+        </div>
+        #if(size!=0)
+        <div class="man-info">
+            <font>您已经保存#(size ??)个地址！</font>
+            <div class="man-if-con">
+                <div class="man-tit">
+                    <p class="p1">收货人</p>
+                    <p class="p2">所在地区</p>
+                    <p class="p3">详细地址</p>
+                    <p class="p5">电话/手机</p>
+                    <p class="p6">操作</p>
+                </div>
+                <ul class="man-ul1">
+                    #for(item : addrList)
+                    <li>
+                        <p class="p1">#(item.consignee)</p>
+                        <p class="p2">#(item.province) &nbsp #(item.city)</p>
+                        <p class="p3">#(item.detailAddr)</p>
+                        <p class="p5">#(item.consigneePhone)</p>
+                        <p class="p6">
+
+                            <a href="/user/details/changAddress/#(item.addrId)-#(item.uid)">修改</a> |
+                            <a href="/user/details/deleteAddress/#(item.addrId)-#(item.uid)">删除</a>
+                        </p>
+                        #if(item.isDefault ==1)
+                        <p class="p7"><a href="#">默认地址</a></p>
+                        #else
+                        <p class="p7"><a href="/user/details/setDefaultAddr/#(item.addrId)-#(item.uid)">设为默认地址</a></p>
+                        #end
+                        <div style="clear:both;"></div>
+                    </li>
+                    #end
+                </ul>
+            </div>
+        </div>
+        #end
+    </div>
+    <div style="clear:both;"></div>
+</div>
+#@end()
+</body>
+</html>

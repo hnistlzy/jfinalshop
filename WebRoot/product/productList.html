@@ -1,0 +1,83 @@
+#@top()
+<link rel="stylesheet" type="text/css" href="#(contextPath)/css/shopping-mall-index.css" />
+<!--内容↓↑-->
+<div class="shop-page-con w1200">
+    <div class="shop-pg-left f-l" style="width:215px">
+        <div class="shop-left-buttom" style="margin-top:0;">
+            <div class="sp-tit1">
+                <h3>商品推荐</h3>
+            </div>
+            <ul class="shop-left-ul">
+                <li>
+                    <div class="li-top">
+                        <a href="#" class="li-top-tu"><img src="#(contextPath)/images/sp-con-r-tu.gif" /></a>
+                        <p class="jiage"><span class="sp1">￥109</span></p>
+                    </div>
+                    <p class="miaoshu">德国原装进口Wurenbacher瓦伦冰黑啤5L/桶</p>
+                    <div class="li-md">
+                        <div class="md-l f-l">
+
+                            <div style="clear:both;"></div>
+                        </div>
+
+                        <div style="clear:both;"></div>
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="shop-pg-right f-r">
+        <div class="shop-right-cmp" style="margin-top:0;">
+            <div class="sp-tit1">
+                <h3>搜索结果</h3>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+        <div class="shop-right-con">
+            <ul class="shop-ul-tu shop-ul-tu1">
+                #for(product : productList)
+                <li>
+                    <div class="li-top">
+                        <a href="/product/queryProductDetail/#(product.pid)" class="li-top-tu"><img src="#(contextPath)/#(product.title_img)" height="100px" width="100px"/></a>
+                        <p class="jiage"><span class="sp1">￥#(product.price)</span></p>
+                    </div>
+                    <p class="miaoshu">#(product.pname)</p>
+                </li>
+                #end
+                <div style="clear:both;"></div>
+            </ul>
+        </div>
+
+        <!--分页-->
+        <div class="paging">
+            <div class="pag-left f-l">
+                <a href="#" class="about left-r f-l"><</a>
+                <ul class="left-m f-l">
+                    <li><a href="#">1</a></li>
+                    <li class="current"><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">6</a></li>
+                    <li><a href="#">...</a></li>
+                    <li><a href="#">100</a></li>
+                    <div style="clear:both;"></div>
+                </ul>
+                <a href="#" class="about left-l f-l">></a>
+                <div style="clear:both;"></div>
+            </div>
+            <div class="pag-right f-l">
+                <div class="jump-page f-l">
+                    到第<input type="text" />页
+                </div>
+                <button class="f-l">确定</button>
+                <div style="clear:both;"></div>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+    </div>
+</div>
+<div style="clear:both;"></div>
+</div>
+#@end()

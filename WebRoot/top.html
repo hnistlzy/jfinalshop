@@ -1,0 +1,87 @@
+#define top()
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="#(contextPath)/css/style.css" />
+<link rel="stylesheet" type="text/css" href="#(contextPath)/css/index.css" />
+<script type="text/javascript" src="#(contextPath)/js/jquery.js"></script>
+<script type="text/javascript" src="#(contextPath)/js/zhonglin.js"></script>
+
+</head>
+ <div class="top">
+    	<div class="top-con w1200">
+        	<p class="t-con-l f-l">
+                #if(session ==null)
+                您好，欢迎来到宅客微购
+                #else if(((session.user ??).nickname ??)!=null)
+                您好#((session.user ??).nickname ??)，欢迎来到宅客微购
+                #else if((session.loginName ??) !=null)
+                #(session.loginName ??)您好，欢迎来到宅客微购
+                #end
+            </p>
+            <ul class="t-con-r f-r">
+            	<li><a href="#(contextPath)/user/details/#(session.user.uid ??)">我 (个人中心)</a></li>
+            	<li><a href="#">我的购物车</a></li>
+            	<li><a href="#">我的订单</a></li>
+            	<li class="erweima">
+                	<a href="#">扫描二维码</a>
+                    <div class="ewm-tu">
+                    	<a href="#"><img src="images/erweima-tu.jpg" /></a>
+                    </div>
+                </li>
+                <div style="clear:both;"></div>
+            </ul>
+            <div style="clear:both;"></div>
+        </div>
+    </div>
+    
+    <!--logo search 开始-->
+    <div class="hd-info1 w1200">
+    	<div class="logo f-l">
+        	<h1><a href="/" title="李朝宇毕设"><img src="#(contextPath)/images/logo.jpg" /></a></h1>
+        </div>
+        <div class="dianji f-r">
+            #if((session.user ??)==null)
+        	<div class="btn1">
+
+            	<button class="btn1-l"  onclick=window.location.href="#(contextPath)/reg">注册</button>
+                <button class="btn1-r" onclick=window.location.href="#(contextPath)/login">登录</button>
+
+                <div style="clear:both;"></div>
+            </div>
+            #end
+
+        </div>
+        <div class="search f-r">
+        	<ul class="sp">
+            	<li class="current" ss-search="sp"><a href="JavaScript:;">商品</a></li>
+                <div style="clear:both;"></div>
+            </ul>
+            <div class="srh">
+            	<div class="ipt f-l">
+                	<input type="text" placeholder="搜索商品..." ss-search-show="sp" />
+                </div>
+                <button class="f-r">搜 索</button>
+                <div style="clear:both;"></div>
+            </div>
+        </div>
+        
+        <div style="clear:both;"></div>
+    </div>
+    <!--nav 开始-->
+    <div class="nav w1200">
+        <ul>
+        	<li><a href="/">首页</a></li>
+        	<!--
+        	首页展示内容:
+        		查询每条每个分类下的前8条记录
+        	-->
+            #for(category : (session.categoryList ??))
+        	<li><a href="/product/findByCid/#(category.cid)">#(category.cname)</a></li>
+            #end
+        	<li><a href="#">关于</a></li>
+            <div style="clear:both;"></div>
+        </ul>
+        <div style="clear:both;"></div>
+    </div>
+    #end

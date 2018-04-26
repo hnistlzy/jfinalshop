@@ -1,0 +1,123 @@
+#@top()
+<link rel="stylesheet" type="text/css" href="#(contextPath)/css/shopping-mall-index.css" />
+
+<div class="details w1200">
+    <div class="deta-info1">
+        <div class="dt-if1-l f-l">
+            <div class="dt-if1-datu">
+                <ul qie-da="">
+                    <li><a href="#"><img src="#(contextPath)/#(product.title_img)" /></a></li>
+                    <div style="clear:both;"></div>
+                </ul>
+            </div>
+        </div>
+
+        <div class="dt-if1-m f-l">
+            <div class="dt-ifm-hd">
+                <h3><a href="#">#(product.headline)</a></h3>
+                <p>#(product.subtitle)</p>
+            </div>
+            <div class="dt-ifm-gojia">
+                <dl>
+                    <dt>宅购价</dt>
+                    <dd>
+                        <p class="p1">
+                            <span class="sp1">¥ #(product.price)</span><span class="sp2">¥ #(product.originalPrice)</span>
+                        </p>
+                        <p class="p2">
+                            <span class="sp1">推荐指数:#(product.score)分</span>
+                        </p>
+                    </dd>
+                    <div style="clear:both;"></div>
+                </dl>
+            </div>
+            <dl class="dt-ifm-spot">
+                <dt></dt>
+                <dd>
+
+                </dd>
+                <div style="clear:both;"></div>
+            </dl>
+
+
+            <dl class="dt-ifm-box3">
+                <dt>数量</dt>
+                <dd>
+                    <a class="box3-left" href="JavaScript:;">-</a>
+                    <input type="text" value="1" id="amount">
+                    <a class="box3-right" href="JavaScript:;">+</a>
+                </dd>
+                <div style="clear:both;"></div>
+            </dl>
+            <script type="text/javascript">
+                var cart= function () {
+                    var value=$("#amount").val();
+                    window.location.href="/cart/addToCart/"+value;
+                }
+            </script>
+            <div class="dt-ifm-box4">
+                <button class="btn1">立即购买</button>
+                <button class="btn2" onclick="javascript:cart()">加入购物车</button>
+            </div>
+        </div>
+
+        <div class="dt-if1-r f-r">
+
+
+        </div>
+        <div style="clear:both;"></div>
+    </div>
+
+    <div class="deta-info2">
+        <div class="dt-if2-l f-l">
+            <div class="if2-l-box1">
+                <div class="if2-tit">
+                    <h3>热门商品</h3>
+                </div>
+                <ul>
+                    <li>
+                        <a href="#"><img src="#(contextPath)/images/if2-l-box1-tu1.gif" /></a>
+                        <a class="if2-li-tit" href="#">乐事Lay's 无限薯片（翡翠黄瓜味）104g/罐</a>
+                        <p>¥6.90</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="if2-l-box1" style="margin-top:18px;">
+                <div class="if2-tit">
+                    <h3>推荐商品</h3>
+                </div>
+                <ul>
+                    <li>
+                        <a href="#"><img src="#(contextPath)/images/if2-l-box1-tu1.gif" /></a>
+                        <a class="if2-li-tit" href="#">乐事Lay's 无限薯片（翡翠黄瓜味）104g/罐</a>
+                        <p>¥6.90</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="dt-if2-r f-r">
+            <ul class="if2-tit2">
+                <li class="current" com-det="dt1"><a href="JavaScript:;">产品信息</a></li>
+                <div style="clear:both;"></div>
+            </ul>
+            <div style="border:1px solid #DBDBDB;" com-det-show="dt1">
+                <div class="if2-tu1">
+                    #for(img : productImg)
+                    <img src="#(contextPath)/#(img.pimg)" />
+                    #end
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+
+            <div style="display:none;" com-det-show="dt2">
+
+                <div class="if2-r-box3">
+
+                </div>
+
+            </div>
+        </div>
+        <div style="clear:both;"></div>
+    </div>
+</div>
+#@end()
