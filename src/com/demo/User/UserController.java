@@ -18,7 +18,7 @@ public class UserController  extends Controller {
 
   @ Before(RegByEmailInterceptor.class)
     public void regByEmail(){
-       User user = getModel(User.class);
+       User user = getBean(User.class);
        Boolean bool = userService.regByEmail(user);
        if(bool){
             setAttr("flag",true);
@@ -36,7 +36,7 @@ public class UserController  extends Controller {
 
     }
     public  void regByPhone(){
-        User user = getModel(User.class);
+        User user = getBean(User.class);
         String verifyCode = getPara("verifyCode");
         String code = getSession().getAttribute("code").toString();
         if (verifyCode.equals(code)){
@@ -132,7 +132,7 @@ public class UserController  extends Controller {
      */
     @Before(LoginInterceptor.class)
     public void login(){
-        User user = getModel(User.class);
+        User user = getBean(User.class);
         String loginName = getPara("loginName");
         if(findCode(loginName)){
             //如果有"@"符号，调用邮箱的登录方法
@@ -165,7 +165,7 @@ public class UserController  extends Controller {
      * 邮箱注册后自动登录
      */
     public void autoLogin(){
-        User model = getModel(User.class);
+        User model = getBean(User.class);
         String sql ="select * from t_user where email =? and password =?";
         User user = new User().dao().findFirst(sql, model.getStr("email"), model.getStr("password"));
         setSessionAttr("user",user);

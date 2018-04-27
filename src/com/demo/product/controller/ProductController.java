@@ -15,7 +15,7 @@ public class ProductController  extends Controller{
     public void findByCid(){
         int cid = getParaToInt(0);
         List<Record> productList = ps.findByCid(cid);
-        setAttr("productList",productList);
+        setAttr("productList" ,productList);
         render("/product/productList.html");
     }
     public void queryProductDetail(){

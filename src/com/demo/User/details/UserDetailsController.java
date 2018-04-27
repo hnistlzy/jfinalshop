@@ -17,7 +17,7 @@ public class UserDetailsController extends Controller {
     }
 
     public void updateDetail() {
-        User model = getModel(User.class);
+        User model = getBean(User.class);
         Integer uid = getParaToInt(0);
         User user = uds.updateDetails(model, uid.intValue());
         setSessionAttr("user", user);
@@ -46,7 +46,7 @@ public class UserDetailsController extends Controller {
      */
     public void addAddress(){
         int uid = getParaToInt(0);
-        UserAddress userAddress = getModel(UserAddress.class);
+        UserAddress userAddress = getBean(UserAddress.class);
         userAddress.set("uid",uid);
         userAddress.save();
         List<Record> addrList = uds.queryAddress(uid);
@@ -85,7 +85,7 @@ public class UserDetailsController extends Controller {
     public void updateAddress() {
         int addrId = getParaToInt(1);
         int uid = getParaToInt(0);
-        UserAddress userAddress = getModel(UserAddress.class);
+        UserAddress userAddress = getBean(UserAddress.class);
         uds.updateAddress(userAddress, addrId);
         List<Record> records = uds.queryAddress(uid);
         setAttr("addrList", records);
